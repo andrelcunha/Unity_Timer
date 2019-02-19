@@ -27,12 +27,30 @@ namespace _2MuchPines.Unity_Timer
             }
         }
 
+
         [SerializeField] bool _timeOver;
         [SerializeField] bool _startOnAwake;
         [SerializeField] UnityEvent _onTimeOver;
         bool _isRunning;
 
-        #region MonoBehavior Methods
+        #region Properties
+
+        public UnityEvent OnTimeOver
+        {
+            get
+            {
+                return _onTimeOver;
+            }
+
+            set
+            {
+                _onTimeOver = value;
+            }
+        }
+
+        #endregion
+
+        #region MonoBehavior_Methods
 
         void Awake()
         {
@@ -79,7 +97,7 @@ namespace _2MuchPines.Unity_Timer
         {
             _timeOver = true;
             StopRunning();
-            _onTimeOver.Invoke();
+            OnTimeOver.Invoke();
         }
 
         void UpdateTime()

@@ -34,7 +34,17 @@ namespace _2MuchPines.Unity_Timer
         bool _isRunning;
 
         #region Properties
-
+        public float TotalTime
+        {
+            get
+            {
+                return _totalTime;
+            }
+            set
+            {
+                _totalTime = value;
+            }
+        }
         public UnityEvent OnTimeOver
         {
             get

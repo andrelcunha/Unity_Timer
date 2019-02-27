@@ -7,16 +7,8 @@ namespace _2MuchPines.Unity_Timer
     {
 
         [SerializeField] bool _isRegressive;
-        [SerializeField] float _totalTime;
-
-        public float TotalTime
-        {
-            get
-            {
-                return _totalTime;
-            }
-        }
-
+        
+	[SerializeField] float _totalTime;
         [SerializeField] float _timeLeft;
 
         public float TimeLeft
